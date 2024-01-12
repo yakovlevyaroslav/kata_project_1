@@ -1,0 +1,251 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+@font-face {
+  font-family: "TTLake";
+  src: url("../assets/fonts/TTLakes-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TTLake";
+  src: url("../assets/fonts/TTLakes-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TTLake";
+  src: url("../assets/fonts/TTLakes-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+  font-family: TTLake, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: #1B1C21;
+  overflow-x: hidden;
+  background-color: #F8F8F8;
+}
+
+.container {
+  margin: auto;
+  width: 100%;
+  max-width: 1078px;
+}
+
+.header {
+  background-color: white;
+}
+@media (min-width: 1120px) {
+  .header {
+    display: none;
+  }
+}
+.header-line {
+  width: 2px;
+  height: 32px;
+  background-color: #EAEAEA;
+  border-radius: 1px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 16px;
+}
+.header__inner-left {
+  display: flex;
+  align-items: center;
+}
+.header__inner-left .header-line {
+  display: none;
+}
+.header__inner-left .logo {
+  margin-left: 16px;
+}
+@media (min-width: 768px) {
+  .header__inner-left .header-line {
+    display: block;
+  }
+  .header__inner-left .logo {
+    margin-left: 0;
+  }
+}
+.header__inner-middle {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header__inner-middle {
+    display: flex;
+    margin-left: auto;
+  }
+}
+.header__inner-right {
+  display: flex;
+  align-items: center;
+}
+.header__link {
+  margin-right: 16px;
+}
+.header__link:last-of-type {
+  margin-right: 0;
+}
+.header__link-img {
+  width: 40px;
+  height: 40px;
+}
+
+.main {
+  padding: 24px 0;
+}
+
+.logo {
+  width: 96px;
+  height: 50px;
+}
+
+.tabs {
+  font-size: 16px;
+  line-height: 24px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  color: #7E7E82;
+  overflow-x: scroll;
+  padding-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .tabs {
+    margin-bottom: 8px;
+  }
+}
+@media (min-width: 1120px) {
+  .tabs {
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    padding-bottom: 8px;
+  }
+}
+.tabs__item {
+  list-style: none;
+  white-space: nowrap;
+  padding: 8px 16px;
+}
+.tabs__item--active {
+  border: 2px solid #41F6D7;
+  border-radius: 6px;
+  background-color: white;
+}
+.tabs__link {
+  color: #7E7E82;
+}
+
+@media (min-width: 768px) {
+  .article {
+    display: flex;
+  }
+}
+.article__text {
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0 16px;
+  margin: 16px auto;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .article__text {
+    line-height: 20px;
+  }
+}
+@media (min-width: 1120px) {
+  .article__text {
+    line-height: 20px;
+    margin-top: 0;
+  }
+}
+.article__link {
+  padding-left: 48px;
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+.article__link:before {
+  position: absolute;
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 8px 11px;
+  background-image: url("../assets/images/icons/arrows.svg");
+  width: 24px;
+  height: 24px;
+  left: 12px;
+  top: -2px;
+}
+.article__image {
+  margin-top: 16px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .article__image {
+    max-width: 360px;
+  }
+}
+@media (min-width: 1120px) {
+  .article__image {
+    max-width: 530px;
+    margin-top: 0;
+  }
+}
+
+.title-block {
+  display: flex;
+  align-items: center;
+}
+.title-block .title {
+  font-size: 28px;
+  font-weight: bold;
+  border-left: 4px solid #41F6D7;
+  padding-left: 12px;
+  margin-right: auto;
+}
+.title-block .title-links {
+  display: none;
+}
+@media (min-width: 1120px) {
+  .title-block .title-links {
+    display: flex;
+  }
+}
+.title-block .title-links .header__link {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin-left: auto;
+  color: #1B1C21;
+}
+.title-block .title-links .header__link-img {
+  margin-left: 8px;
+}/*# sourceMappingURL=style.css.map */
