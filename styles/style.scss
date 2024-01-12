@@ -1,0 +1,278 @@
+@import './media-mixin';
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+@font-face {
+  font-family: 'TTLake';
+  src: url('../assets/fonts/TTLakes-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTLake';
+  src: url('../assets/fonts/TTLakes-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTLake';
+  src: url('../assets/fonts/TTLakes-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: TTLake, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  color: $black-text;
+  overflow-x: hidden;
+  background-color: $gray-bg;
+}
+
+.container {
+  margin: auto;
+  width: 100%;
+  max-width: 1078px;
+}
+
+// Header
+
+.header {
+  background-color: white;
+
+  @include for-desktop {
+    display: none;
+  }
+
+  &-line {
+    width: 2px;
+    height: 32px;
+    background-color: $gray-line;
+    border-radius: 1px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 18px 16px;
+
+    &-left {
+      display: flex;
+      align-items: center;
+
+      .header-line {
+        display: none;
+      }
+
+      .logo {
+        margin-left: 16px;
+      }
+
+      @include for-tablet {
+
+        .header-line {
+          display: block;
+        }
+  
+        .logo {
+          margin-left: 0;
+        }
+  
+      }
+    }
+
+    &-middle {
+      display: none;
+
+      @include for-tablet {
+        display: flex;
+        margin-left: auto;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    margin-right: 16px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &-img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.main {
+  padding: 24px 0;
+}
+
+.logo {
+  width: 96px;
+  height: 50px;
+}
+
+.tabs {
+  font-size: 16px;
+  line-height: 24px;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+  color: $gray-text;
+  overflow-x: scroll;
+  padding-bottom: 24px;
+
+  @include for-tablet {
+    margin-bottom: 8px;
+  }
+
+  @include for-desktop {
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    padding-bottom: 8px;
+  }
+
+  &__item {
+    list-style: none;
+    white-space: nowrap;
+    padding: 8px 16px;
+
+    &--active {
+      border: 2px solid $green-line;
+      border-radius: 6px;
+      background-color: white;
+    }
+  }
+
+  &__link {
+    color: $gray-text;
+  }
+}
+
+.article {
+
+  @include for-tablet {
+    display: flex;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0 16px;
+    margin: 16px auto;
+    display: flex;
+    flex-direction: column;
+    // max-height: 90px;
+    // line-height: 18px;
+    // overflow: hidden;
+
+    @include for-tablet {
+      line-height: 20px;
+    }
+
+    @include for-desktop {
+      line-height: 20px;
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    padding-left: 48px;
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 8px 11px;
+      background-image: url('../assets/images/icons/arrows.svg');
+      width: 24px;
+      height: 24px;
+      left: 12px;
+      top: -2px;
+    }
+  }
+
+  &__image {
+    margin-top: 16px;
+    width: 100%;
+
+    @include for-tablet {
+      max-width: 360px;
+    }
+
+    @include for-desktop {
+      max-width: 530px;
+      margin-top: 0;
+    }
+  }
+}
+
+.title-block {
+  display: flex;
+  align-items: center;
+
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    border-left: 4px solid $green-line;
+    padding-left: 12px;
+    margin-right: auto;
+  }
+
+  .title-links {
+    display: none;
+
+    @include for-desktop {
+      display: flex;
+    }
+
+    .header__link {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      margin-left: auto;
+      color: $black-text;
+
+      &-img {
+        margin-left: 8px;
+      }
+    }
+  }
+}
