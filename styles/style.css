@@ -107,6 +107,7 @@ body {
 }
 .header__link {
   margin-right: 16px;
+  cursor: pointer;
 }
 .header__link:last-of-type {
   margin-right: 0;
@@ -156,6 +157,9 @@ body {
   border: 2px solid #41F6D7;
   border-radius: 6px;
   background-color: white;
+}
+.tabs__item--active .tabs__link {
+  cursor: default;
 }
 .tabs__link {
   color: #7E7E82;
@@ -248,4 +252,93 @@ body {
 }
 .title-block .title-links .header__link-img {
   margin-left: 8px;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  min-width: 320px;
+  height: 100vh;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
+}
+.aside-top {
+  padding: 18px 24px;
+  margin-bottom: 30px;
+}
+.aside-top .header__link:first-child {
+  margin-right: 16px;
+}
+.aside-top .logo {
+  margin-right: auto;
+}
+.aside-bottom {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.aside-bottom__row {
+  margin-bottom: 16px;
+}
+.aside-bottom__row:nth-child(2) {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.aside-bottom__row:nth-child(3) {
+  margin-bottom: 0;
+}
+.aside-bottom__mail {
+  font-weight: 500;
+  color: #1B1C21;
+  margin-bottom: 12px;
+}
+.aside-bottom__phone {
+  font-weight: 700;
+  color: #1B1C21;
+  font-size: 24px;
+  line-height: 1;
+}
+.aside-bottom__lang {
+  color: #1B1C21;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 7px;
+}
+.aside-bottom__lang--active {
+  color: #7E7E82;
+}
+.aside .logo {
+  margin-left: 0;
+}
+
+.navigation-menu {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+}
+.navigation-menu__item {
+  padding: 16px 24px 16px 0;
+  list-style: none;
+}
+.navigation-menu .navigation-menu__link {
+  color: #1B1C21;
+  padding-left: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.navigation-menu .navigation-menu__link--active {
+  color: #7E7E82;
+  position: relative;
+  cursor: default;
+}
+.navigation-menu .navigation-menu__link--active:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 32px;
+  background-color: #41F6D7;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }/*# sourceMappingURL=style.css.map */
