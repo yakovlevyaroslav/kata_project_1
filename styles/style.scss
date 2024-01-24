@@ -8,6 +8,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -53,7 +54,12 @@ body {
 .container {
   margin: auto;
   width: 100%;
-  max-width: 1078px;
+  max-width: 1068px;
+  padding: 0;
+
+  @include for-phone {
+    padding: 0 5px;
+  }
 }
 
 // Header
@@ -391,5 +397,149 @@ body {
         transform: translateY(-50%);
       }
     }
+  }
+}
+
+// Brand Slider
+
+// .brands-slider {
+//   background-color: $gray-bg;
+
+//   @include for-phone {
+//     display: none !important;
+//   }
+
+//   &__slide {
+//     width: 80% !important;
+//   }
+
+//   &__slide-content {
+//     border: 1px solid $gray-line;
+//     border-radius: 6px;
+//     background-color: white;
+//     padding: 16px;
+//     width: 240px;
+//     height: 72px;
+//     max-width: 240px;
+//     max-height: 72px;
+//     display: flex;
+//     align-items: center;
+
+//     &__logo {
+//       max-width: 120px;
+//       margin-right: auto;
+//     }
+//   }
+
+//   &__pagination {
+//     bottom: 0 !important;
+
+//     .swiper-pagination-bullet {
+//       width: 12px;
+//       height: 12px;
+//       background-color: $gray-bullet;
+
+//       &-active {
+//         background-color: $gray-bullet--active;
+//       }
+//     }
+//   }
+
+//   &__wrapper {
+//     padding-bottom: 30px;
+//     padding: 16px 16px 28px;
+//   }
+// }
+
+.brands {
+  &-title {
+    text-transform: uppercase;
+    padding: 16px;
+    background-color: white;
+    color: $gray-text;
+  }
+}
+
+.brands-slider {
+  background-color: $gray-bg;
+
+  @include for-phone {
+    display: none !important;
+  }
+
+  &__slide {
+    width: 80% !important;
+  }
+
+  &__pagination {
+    bottom: 0 !important;
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background-color: $gray-bullet;
+
+      &-active {
+        background-color: $gray-bullet--active;
+      }
+    }
+  }
+
+  &__wrapper {
+    padding-bottom: 30px;
+    padding: 16px 16px 28px;
+  }
+}
+
+.brands-wrapper {
+  display: none;
+  @include for-phone {
+    display: block;
+  }
+}
+
+.brands-all {
+  margin-top: 24px;
+  cursor: pointer;
+
+  &--active {
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.brands-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 240px);
+  grid-template-rows: repeat(auto-fit, 72px);
+  gap: 16px 24px;
+  padding-top: 16px;
+
+  &--collapsed {
+    overflow: hidden;
+    max-height: 176px;
+  }
+}
+
+.brand-item {
+  border: 1px solid $gray-line;
+  border-radius: 6px;
+  background-color: white;
+  padding: 16px;
+  width: 100%;
+  height: 72px;
+  max-width: 240px;
+  max-height: 72px;
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    max-width: 120px;
+    margin-right: auto;
   }
 }
