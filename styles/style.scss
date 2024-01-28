@@ -57,7 +57,7 @@ body {
   max-width: 1068px;
   padding: 0;
 
-  @include for-phone {
+  @include for-tablet {
     padding: 0 5px;
   }
 }
@@ -402,55 +402,6 @@ body {
 
 // Brand Slider
 
-// .brands-slider {
-//   background-color: $gray-bg;
-
-//   @include for-phone {
-//     display: none !important;
-//   }
-
-//   &__slide {
-//     width: 80% !important;
-//   }
-
-//   &__slide-content {
-//     border: 1px solid $gray-line;
-//     border-radius: 6px;
-//     background-color: white;
-//     padding: 16px;
-//     width: 240px;
-//     height: 72px;
-//     max-width: 240px;
-//     max-height: 72px;
-//     display: flex;
-//     align-items: center;
-
-//     &__logo {
-//       max-width: 120px;
-//       margin-right: auto;
-//     }
-//   }
-
-//   &__pagination {
-//     bottom: 0 !important;
-
-//     .swiper-pagination-bullet {
-//       width: 12px;
-//       height: 12px;
-//       background-color: $gray-bullet;
-
-//       &-active {
-//         background-color: $gray-bullet--active;
-//       }
-//     }
-//   }
-
-//   &__wrapper {
-//     padding-bottom: 30px;
-//     padding: 16px 16px 28px;
-//   }
-// }
-
 .brands {
   &-title {
     text-transform: uppercase;
@@ -463,12 +414,12 @@ body {
 .brands-slider {
   background-color: $gray-bg;
 
-  @include for-phone {
+  @include for-tablet {
     display: none !important;
   }
 
   &__slide {
-    width: 80% !important;
+    width: 240px !important;
   }
 
   &__pagination {
@@ -493,7 +444,7 @@ body {
 
 .brands-wrapper {
   display: none;
-  @include for-phone {
+  @include for-tablet {
     display: block;
   }
 }
@@ -534,6 +485,7 @@ body {
   width: 100%;
   height: 72px;
   max-width: 240px;
+  min-width: 240px;
   max-height: 72px;
   display: flex;
   align-items: center;
@@ -543,3 +495,4 @@ body {
     margin-right: auto;
   }
 }
+
