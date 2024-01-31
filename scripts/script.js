@@ -15,7 +15,10 @@ function textContentToggle(element, text1, text2) {
   }
 }
 
+let slider = document.querySelector('.brands-slider')
+
 if (window.innerWidth < 768) {
+  slider.classList.add('brands-slider')
   var swiper = new Swiper(".brands-slider", {
     slidesPerView: "auto",
     spaceBetween: 30,
@@ -24,4 +27,6 @@ if (window.innerWidth < 768) {
       clickable: true,
     },
   });
+} else {
+  slider.classList.remove('brands-slider')
 }

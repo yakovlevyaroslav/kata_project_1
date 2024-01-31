@@ -4,7 +4,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -104,7 +106,7 @@ body {
         .header-line {
           display: block;
         }
-  
+
         .logo {
           margin-left: 0;
         }
@@ -130,7 +132,7 @@ body {
     margin-right: 16px;
     cursor: pointer;
     transition: filter .4s;
-    
+
     &:hover {
       filter: drop-shadow(0px 0px 3px #2e162470);
     }
@@ -385,7 +387,7 @@ body {
       color: $gray-text;
       position: relative;
       cursor: default;
-  
+
       &:before {
         content: '';
         position: absolute;
@@ -413,12 +415,10 @@ body {
 
 .brands-slider {
   background-color: $gray-bg;
+  padding: 20px 0 0 5px !important;
+  height: 126px !important;
 
-  @include for-tablet {
-    display: none !important;
-  }
-
-  &__slide {
+   &__slide {
     width: 240px !important;
   }
 
@@ -435,21 +435,25 @@ body {
       }
     }
   }
-
-  &__wrapper {
-    padding-bottom: 30px;
-    padding: 16px 16px 28px;
-  }
 }
 
-.brands-wrapper {
-  display: none;
+.brands-list {
   @include for-tablet {
-    display: block;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, 240px);
+    grid-template-rows: repeat(auto-fit, 72px);
+    gap: 16px 24px;
+    padding-top: 16px;
+
+    &--collapsed {
+      overflow: hidden;
+      max-height: 176px;
+    }
   }
 }
 
 .brands-all {
+  display: none;
   margin-top: 24px;
   cursor: pointer;
 
@@ -462,18 +466,9 @@ body {
   &:hover {
     text-decoration: underline;
   }
-}
 
-.brands-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 240px);
-  grid-template-rows: repeat(auto-fit, 72px);
-  gap: 16px 24px;
-  padding-top: 16px;
-
-  &--collapsed {
-    overflow: hidden;
-    max-height: 176px;
+  @include for-tablet {
+    display: block;
   }
 }
 
@@ -495,4 +490,3 @@ body {
     margin-right: auto;
   }
 }
-
