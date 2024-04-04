@@ -10,6 +10,10 @@
   @media (min-width: 1120px) { @content; }
 }
 
+@mixin for-desktop--big {
+  @media (min-width: 1440px) { @content; }
+}
+
 $black-text: #1B1C21;
 $gray-text: #7E7E82;
 $gray-bg: #F8F8F8;
