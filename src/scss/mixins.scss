@@ -14,6 +14,21 @@
   @media (min-width: 1440px) { @content; }
 }
 
+@mixin bg--standart {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin bg--contain {
+  @include bg--standart;
+  background-size: contain;
+}
+
+@mixin bg--cover {
+  @include bg--standart;
+  background-size: cover;
+}
+
 $black-text: #1B1C21;
 $gray-text: #7E7E82;
 $gray-bg: #F8F8F8;
