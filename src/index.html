@@ -552,11 +552,11 @@
     <div class="form-title">
       Обратная связь
     </div>
-    <form class="form-form">
-      <input type="text" class="form-form__input" placeholder="Имя">
-      <input type="text" class="form-form__input" placeholder="Телефон">
-      <input type="text" class="form-form__input" placeholder="Электронная почта">
-      <textarea placeholder="Сообщение" name="" id="" cols="30" rows="4" class="form-form__input"></textarea>
+    <form action="/" method="post" class="form-form">
+      <input type="text" name="name" class="form-form__input" placeholder="Имя" required>
+      <input type="tel" name="phone" class="form-form__input" placeholder="Телефон" required>
+      <input type="email" name="email" class="form-form__input" placeholder="Электронная почта" required>
+      <textarea name="textarea" placeholder="Сообщение" cols="30" rows="4" class="form-form__input"></textarea>
       <div class="form-form__disclaimer">
         Нажимая “отправить”, вы даете согласие на
         <a href="#" class="form-form__disclaimer-link">обработку персональных данных</a>
@@ -575,17 +575,17 @@
     <div class="form-title">
       Заказать звонок
     </div>
-    <form class="form-form">
-      <input type="tel" class="form-form__input" placeholder="Телефон">
+    <form action="/" method="post" class="form-form">
+      <input type="tel" name="phone" class="form-form__input" placeholder="Телефон" required>
       <div class="form-form__disclaimer">
         Нажимая “отправить”, вы даете согласие на
         <a href="#" class="form-form__disclaimer-link">обработку персональных данных</a>
         и соглашаетесь c нашей 
         <a href="#" class="form-form__disclaimer-link">политикой конфиденциальности</a>
       </div>
-      <submit class="form-form__submit prices-table__btn">
+      <button type="submit" class="form-form__submit prices-table__btn">
         Отправить
-      </submit>
+      </button>
     </form>
   </div>
 

@@ -217,9 +217,6 @@ body {
     margin: 16px auto;
     display: flex;
     flex-direction: column;
-    // max-height: 90px;
-    // line-height: 18px;
-    // overflow: hidden;
 
     @include for-tablet {
       line-height: 20px;
