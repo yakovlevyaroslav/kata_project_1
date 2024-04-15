@@ -1,0 +1,60 @@
+// Article styles
+.article {
+
+  @include for-tablet {
+    display: flex;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0 16px;
+    margin: 16px auto;
+    display: flex;
+    flex-direction: column;
+
+    @include for-tablet {
+      line-height: 20px;
+    }
+
+    @include for-desktop {
+      line-height: 20px;
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    padding-left: 48px;
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 8px 11px;
+      background-image: url('../img/icons/arrows.svg');
+      width: 24px;
+      height: 24px;
+      left: 12px;
+      top: -2px;
+    }
+  }
+
+  &__image {
+    margin-top: 16px;
+    width: 100%;
+
+    @include for-tablet {
+      max-width: 360px;
+    }
+
+    @include for-desktop {
+      max-width: 530px;
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+// Table slider
+.table-slider {
+  &__slide {
+    width: 260px !important;
+
+    @include for-tablet {
+      width: 100% !important;
+    }
+
+    &:last-of-type {
+      
+      .prices-table__row {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}

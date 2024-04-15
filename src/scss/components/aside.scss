@@ -1,0 +1,88 @@
+// Aside menu
+.aside {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  opacity: 1;
+  transition-duration: .3s;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  min-width: 320px;
+  height: 100vh;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.20);
+  background-color: white;
+  overflow-y: scroll;
+
+  @include for-desktop--big {
+    position: static;
+  }
+
+  &-top {
+    padding: 18px 24px;
+    margin-bottom: 30px;
+
+    .header__link:first-child {
+      margin-right: 16px;
+    }
+
+    .logo {
+      margin-right: auto;
+    }
+  }
+
+  &-bottom {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+
+    &__row {
+      margin-bottom: 16px;
+
+      &:nth-child(2) {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &:nth-child(3) {
+        margin-bottom: 0;
+      }
+    }
+
+    &__mail {
+      font-weight: 500;
+      color: $black-text;
+      margin-bottom: 12px;
+    }
+
+    &__phone {
+      font-weight: 700;
+      color: $black-text;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    &__lang {
+      color: $black-text;
+      cursor: pointer;
+      font-weight: 500;
+      margin-right: 7px;
+
+      &--active {
+        color: $gray-text;
+      }
+    }
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+}
+
+.aside--visible {
+  opacity: 1;
+  left: 0;
+  transition-duration: .3s;
+}
