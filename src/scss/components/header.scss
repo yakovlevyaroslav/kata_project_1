@@ -1,0 +1,99 @@
+// Header
+.header {
+  background-color: white;
+
+  @include for-desktop--big {
+    display: none;
+  }
+
+  &-line {
+    width: 2px;
+    height: 32px;
+    background-color: $gray-line;
+    border-radius: 1px;
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 18px 16px;
+
+    &-left {
+      display: flex;
+      align-items: center;
+
+      .header__link-btn {
+        margin-right: 16px;
+
+        &--menu-close {
+          display: block;
+
+          @include for-desktop--big {
+            display: none;
+          }
+        }
+      }
+
+      .header-line {
+        display: none;
+      }
+
+      .logo {
+        margin-left: 16px;
+      }
+
+      @include for-tablet {
+
+        .header-line {
+          display: block;
+        }
+      }
+    }
+
+    &-middle {
+      display: none;
+
+      @include for-tablet {
+        display: flex;
+        margin-left: auto;
+      }
+
+      .header__link-btn {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+
+      .header__link-btn {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  &__link {
+    margin-right: 16px;
+    cursor: pointer;
+    transition: filter .4s;
+
+    &:hover {
+      filter: drop-shadow(0px 0px 3px #2e162470);
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &-img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

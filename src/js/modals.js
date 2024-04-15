@@ -1,12 +1,15 @@
 
 // Modals
+const htmlTagElement = document.querySelector('html')
+const bodyTagElement = document.querySelector('body')
+
 const overlay = document.querySelector('.overlay')
 const formBlock = document.querySelector('.form-block--form')
 const formBlockCloseBtn = formBlock.querySelector('.form-close')
 
 formBlockCloseBtn.addEventListener('click', function() {
-  document.querySelector('html').classList.remove('no-scroll')
-  document.querySelector('body').classList.remove('no-scroll')
+  htmlTagElement.classList.remove('no-scroll')
+  bodyTagElement.classList.remove('no-scroll')
   formBlock.classList.remove('form-block--visible')
   overlay.classList.remove('d-block')
 })
@@ -14,8 +17,8 @@ formBlockCloseBtn.addEventListener('click', function() {
 const formBtn = document.querySelectorAll('.header__link--form')
 formBtn.forEach(function(elem) {
   elem.addEventListener('click', function() {
-    document.querySelector('html').classList.add('no-scroll')
-    document.querySelector('body').classList.add('no-scroll')
+    htmlTagElement.classList.add('no-scroll')
+    bodyTagElement.classList.add('no-scroll')
     formBlock.classList.toggle('form-block--visible')
     overlay.classList.add('d-block')
   })
@@ -27,16 +30,16 @@ const callBlockCloseBtn = document.querySelector('.form-block--call .form-close'
 
 callBtn.forEach(function(elem) {
   elem.addEventListener('click', function() {
-    document.querySelector('html').classList.add('no-scroll')
-    document.querySelector('body').classList.add('no-scroll')
+    htmlTagElement.classList.add('no-scroll')
+    bodyTagElement.classList.add('no-scroll')
     callBlock.classList.toggle('form-block--visible')
     overlay.classList.add('d-block')
   })
 })
 
 callBlockCloseBtn.addEventListener('click', function() {
-  document.querySelector('html').classList.remove('no-scroll')
-  document.querySelector('body').classList.remove('no-scroll')
+  htmlTagElement.classList.remove('no-scroll')
+  bodyTagElement.classList.remove('no-scroll')
   callBlock.classList.remove('form-block--visible')
   overlay.classList.remove('d-block')
 })
@@ -46,14 +49,14 @@ const menuBtn = document.querySelector('.header__link-btn--menu')
 const menuCloseBtn = document.querySelector('.header__link-btn--menu-close')
 
 menuBtn.addEventListener('click', function() {
-  document.querySelector('html').classList.add('no-scroll')
-  document.querySelector('body').classList.add('no-scroll')
+  htmlTagElement.classList.add('no-scroll')
+  bodyTagElement.classList.add('no-scroll')
   menuBlock.classList.add('aside--visible')
   overlay.classList.add('d-block')
 })
 menuCloseBtn.addEventListener('click', function() {
-  document.querySelector('html').classList.remove('no-scroll')
-  document.querySelector('body').classList.remove('no-scroll')
+  htmlTagElement.classList.remove('no-scroll')
+  bodyTagElement.classList.remove('no-scroll')
   menuBlock.classList.remove('aside--visible')
   overlay.classList.remove('d-block')
 })
